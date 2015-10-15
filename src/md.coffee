@@ -144,7 +144,7 @@ class HtmlParser
     # Create a DOM if `window` doesn't exist (i.e. when running in node).
     @win = window ? null
     unless @win?
-      doc  = require('jsdom').jsdom
+      doc  = require('jsdom').jsdom "",
         features: FetchExternalResources: no
         url:      @options.base
       @win = doc.defaultView
